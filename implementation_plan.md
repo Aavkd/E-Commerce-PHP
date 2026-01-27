@@ -208,6 +208,16 @@ CREATE TABLE invoices (
     *   **Create `public/order_details.php`**: Show details for specific order.
     *   **Backend**: Added `getOrdersByUserId` and `getOrderDetails` to `Order.php`.
 
+### PHASE 3.5: Design Refresh (Current)
+*   **Goal**: Elevate the design from "clean" to "wow" using modern trends (Bento Grids, Spotlight effects, dynamic backgrounds).
+*   **Developer**: Frontend
+*   **Tasks**:
+    1.  **[x] Bento Grid Layout**:  Refactor "What We Actually Sell" section in `index.php` into a CSS Grid Bento layout.
+    2.  **[x] Spotlight Effect**: Implement mouse-tracking glow effects on cards (`public/js/spotlight.js` + CSS).
+    3.  **[x] Hero Enhancement**: Add animated background or "Cyber Grid" to the hero section for depth.
+    4.  **[x] Typography & Spacing**: Increase contrast, refine font sizes for a more editorial look.
+
+
 ### PHASE 5: Admin Dashboard (Back-office)
 
 *   **Goal**: Secure management interface for Admins to manage products and users.

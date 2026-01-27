@@ -42,6 +42,7 @@
     </div>
 </footer>
 
+<script src="/js/spotlight.js"></script>
 <script src="/js/main.js"></script>
 
 </body>

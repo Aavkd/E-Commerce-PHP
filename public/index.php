@@ -3,13 +3,65 @@
 <!-- Hero Section -->
 <section class="hero scroll-fade">
     <div class="glow"></div>
+    <div class="glow-2"></div>
+    <div class="hero-bg-grid"></div>
     <div class="container">
-        <h1>We build revenue-driven <br> <span class="text-gradient typing-text">SaaS, Automations & Actors</span></h1>
-        <p class="scroll-fade delay-100">From idea → production → monetization. <br>We turn data problems into profitable assets for data-hungry businesses.</p>
-        
-        <div class="hero-actions scroll-fade delay-200">
-            <a href="/contact.php" class="btn btn-primary">Book a Strategy Call</a>
-            <a href="/products.php" class="btn btn-outline">View Products</a>
+        <div class="hero-grid">
+            <div class="hero-content">
+                <h1>We build revenue-driven <br> <span class="text-gradient typing-text">SaaS, Automations & Actors</span></h1>
+                <p class="scroll-fade delay-100">From idea → production → monetization. <br>We turn data problems into profitable assets for data-hungry businesses.</p>
+                
+                <div class="hero-actions scroll-fade delay-200">
+                    <a href="/contact.php" class="btn btn-primary">Book a Strategy Call</a>
+                    <a href="/products.php" class="btn btn-outline">View Products</a>
+                </div>
+            </div>
+
+            <div class="hero-visual scroll-fade delay-300">
+                <div class="card-stack">
+                    <!-- Top Card -->
+                    <div class="stack-item">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(99, 102, 241, 0.2); display: flex; align-items: center; justify-content: center; color: #818cf8; font-size: 1.2rem;">⚡</div>
+                                <div>
+                                    <div style="font-weight: 700; font-size: 1rem; color: white;">Viral Signal</div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">TikTok Shop • Just Now</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.03); border-radius: 12px; padding: 1rem; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.05);">
+                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.25rem;">Detected Product</div>
+                            <div style="font-weight: 600; font-size: 1.1rem;">Portable Neck Fan</div>
+                        </div>
+
+                        <!-- Code Snippet -->
+                        <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 0.75rem; font-family: monospace; font-size: 0.65rem; line-height: 1.4; color: #a5b4fc; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.05);">
+                            <div style="margin-bottom: 2px;"><span style="color: #c084fc;">const</span> trend = <span style="color: #22d3ee;">await</span> scan(<span style="color: #86efac;">'tiktok'</span>);</div>
+                            <div style="margin-bottom: 2px;"><span style="color: #c084fc;">if</span> (trend.velocity > <span style="color: #fca5a5;">800</span>) {</div>
+                            <div style="padding-left: 1rem; color: #64748b;">// Signal Detected 🚀</div>
+                            <div style="padding-left: 1rem;">alert(<span style="color: #86efac;">'High Demand'</span>);</div>
+                            <div>}</div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: auto;">
+                            <div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">Growth Rate</div>
+                                <div style="color: var(--success); font-weight: 700;">+840% 📈</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">Est. Revenue</div>
+                                <div style="color: white; font-weight: 700;">$12.5k/day</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Middle Card -->
+                    <div class="stack-item"></div>
+                    <!-- Bottom Card -->
+                    <div class="stack-item"></div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -22,12 +74,12 @@
             <p class="scroll-fade delay-100" style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">We don't just write code. We build assets that generate revenue.</p>
         </div>
         
-        <div class="grid-2">
-            <!-- Card 1: Apify Actors -->
-            <div class="card scroll-fade delay-100">
+        <div class="bento-grid">
+            <!-- Card 1: Apify Actors (Large) -->
+            <div class="bento-item span-8 scroll-fade delay-100">
                 <div class="card-icon">🕷️</div>
                 <h3>Apify Actors</h3>
-                <p>Production-ready scrapers and crawlers. We build robust Actors that withstand anti-scraping measures and deliver clean, structured JSON data.</p>
+                <p>Production-ready scrapers and crawlers. We build robust Actors that withstand anti-scraping measures and deliver clean, structured JSON data at scale.</p>
                 <div class="card-tags">
                     <span>Data Scraping</span>
                     <span>Intelligence</span>
@@ -35,37 +87,38 @@
                 </div>
             </div>
             
-            <!-- Card 2: AI & Automation -->
-            <div class="card scroll-fade delay-200">
-                <div class="card-icon">⚡</div>
-                <h3>AI & Automation</h3>
-                <p>N8n workflows and AI Agents that replace human loops. We automate scraping -> enrichment -> outreach pipelines to run on autopilot.</p>
-                 <div class="card-tags">
+            <!-- Card 2: AI & Automation (Tall) -->
+            <div class="bento-item span-4 row-2 scroll-fade delay-200" style="background: linear-gradient(160deg, var(--bg-card) 0%, rgba(99,102,241,0.05) 100%);">
+                <div>
+                    <div class="card-icon">⚡</div>
+                    <h3>AI & Automation</h3>
+                    <p>N8n workflows and AI Agents that replace human loops. We automate scraping -> enrichment -> outreach pipelines to run on autopilot.</p>
+                </div>
+                 <div class="card-tags" style="margin-top: 2rem;">
                     <span>n8n</span>
                     <span>Agents</span>
                     <span>Pipelines</span>
+                    <span>RAG</span>
                 </div>
             </div>
             
             <!-- Card 3: Custom SaaS -->
-            <div class="card scroll-fade delay-300">
+            <div class="bento-item span-4 scroll-fade delay-300">
                 <div class="card-icon">🚀</div>
                 <h3>Custom SaaS</h3>
-                <p>Full-stack products built for monetization. From "just an idea" to a stripe-integrated, multi-tenant SaaS application in record time.</p>
+                <p>Full-stack products built for monetization. From "just an idea" to a stripe-integrated SaaS.</p>
                  <div class="card-tags">
                     <span>MVP</span>
-                    <span>Monetization</span>
                     <span>Scale</span>
                 </div>
             </div>
 
             <!-- Card 4: Data Intelligence -->
-            <div class="card scroll-fade delay-400">
+            <div class="bento-item span-4 scroll-fade delay-400">
                 <div class="card-icon">📊</div>
-                <h3>Data → Business Value</h3>
-                <p>Turning raw data into business value. Dashboards, alerts, and insights that help you make decisions, not just read spreadsheets.</p>
+                <h3>Data → Value</h3>
+                <p>Dashboards, alerts, and insights that help you make decisions, not just read spreadsheets.</p>
                  <div class="card-tags">
-                    <span>Leads</span>
                     <span>Insights</span>
                     <span>Dashboards</span>
                 </div>
@@ -75,7 +128,7 @@
 </section>
 
 <!-- Proof of Expertise -->
-<section class="scroll-fade" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 4rem 0; background: rgba(255,255,255,0.01);">
+<section class="scroll-fade" style="border-top: 1px solid var(--border-color); padding: 4rem 0;">
     <div class="container">
         <p class="text-center" style="color: var(--text-muted); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3rem;">Powering Data Operations With</p>
         

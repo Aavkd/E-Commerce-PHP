@@ -110,4 +110,4 @@ Access the site at `http://localhost:8000`.
 - [x] Connect Frontend to API
 - [x] Cart & Checkout Implementation
 - [x] User Order History & Details
-- [ ] Admin Dashboard methods
+- [x] Admin Dashboard methods
