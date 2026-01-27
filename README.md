@@ -84,9 +84,9 @@ Access the site at `http://localhost:8000`.
 - [ ] Cart & Order Logic
 
 ### Phase 3: Frontend & Design
-- [ ] Premium "High Agency" UI/UX
-- [ ] Dynamic Product Catalog
-- [ ] Service Pages (Apify Actors, Automation, AI)
+- [x] Premium "High Agency" UI/UX
+- [ ] Dynamic Product Catalog (Static Placeholder Implemented)
+- [x] Service Pages (Apify Actors, Automation, AI)
 
 ### Phase 4: Integration
 - [ ] Connect Frontend to API

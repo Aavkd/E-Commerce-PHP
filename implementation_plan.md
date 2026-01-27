@@ -128,18 +128,24 @@ CREATE TABLE invoices (
 *   **Developer**: Frontend
 
 #### Tasks
-1.  **[ ] Design System & Assets**
+1.  **[x] Design System & Assets**
     *   Setup `public/css/style.css` (or `main.css`).
     *   Define Color Palette using CSS Variables (Dark mode focus, premium feel).
     *   Download/Link Fonts (Inter, Outfit).
-2.  **[ ] Shared Components**
+2.  **[x] Shared Components**
     *   Create `public/includes/header.php` (Nav bar).
     *   Create `public/includes/footer.php`.
     *   **Note**: Using `.html` or `.php` views that fetch data via JS.
-3.  **[ ] Landing Page (Home)**
+3.  **[x] Landing Page (Home)**
     *   Implement "Hero Section" from Strategic Report.
     *   Implement "Services" teaser.
     *   Implement "Featured Products" grid (initially static or skeleton loader).
+4.  **[ ] Homepage Overhaul (Rich Content)**
+    *   **Proof of Expertise**: Add logos/tech stack section and metrics line (X actors, Y automations).
+    *   **Expanded Messaging**: Integrate "From data to signal" positioning.
+    *   **Trust Signals**: Add testimonials or "Why Us" comparison table (Scrapers vs Assets).
+    *   **Visual Enhancements**: Better gradients, glassmorphism cards, micro-interactions using existing CSS variables.
+    *   **Interactivity**: Scroll reveal animations, infinite logo marquee, hero typing effect.
 
 ### PHASE 4: Frontend-Backend Integration
 
