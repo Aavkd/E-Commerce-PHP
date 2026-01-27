@@ -9,9 +9,14 @@
 
 <section class="section-padding">
     <div class="container">
-        <p style="text-align: center; color: var(--text-muted);">Dynamic catalog coming soon...</p>
-        <!-- Placeholder for Phase 4 Dynamic Catalog -->
+    <div class="container">
+        <!-- Catalog Grid -->
+        <div id="product-grid" class="products-grid">
+            <!-- Loaded via JS -->
+        </div>
     </div>
 </section>
+
+<script src="/js/catalog.js"></script>
 
 <?php include 'includes/footer.php'; ?>

@@ -156,7 +156,7 @@ CREATE TABLE invoices (
 *   **Developer**: Frontend (consuming Backend)
 
 #### Tasks
-1.  **[ ] Product Catalog (Frontend)**
+1.  **[x] Product Catalog (Frontend)**
     *   **Create `public/js/catalog.js`**:
         *   `fetchProducts()`: Async function to call `GET /api/products/list.php`.
         *   `renderGrid(products)`: Generate HTML for product cards (Image, Title, Price, "Add to Cart").
@@ -166,7 +166,7 @@ CREATE TABLE invoices (
         *   Add container `<div id="product-grid">` with loading state.
         *   Add script reference to `catalog.js`.
         *   **Bonus**: Add simple category filter sidebar (static HTML for now).
-2.  **[ ] Product Details Integration**
+2.  **[x] Product Details Integration**
     *   **Create `public/product.php`** (or `product-detail.php`):
         *   Layout: Image (Left), Details (Right - Title, Description, Price, "Add to Cart").
         *   Container `<div id="product-detail">`.
@@ -174,7 +174,7 @@ CREATE TABLE invoices (
         *   `fetchProductDetails()`: Parse URL param `?id=X`.
         *   Call `GET /api/products/get.php?id=X`.
         *   Render details or show 404 if not found.
-3.  **[ ] Shopping Cart (Global & Page)**
+3.  **[x] Shopping Cart (Global & Page)**
     *   **Create `public/js/cart.js`**:
         *   `addToCart(id)`: POST to `/api/cart.php` (action: click). Show toast notification.
         *   `updateCartHeader()`: Fetch current count and update Header badge.
@@ -185,7 +185,7 @@ CREATE TABLE invoices (
         *   Table Layout: Product, Unit Price, Quantity (Input), Total, Remove (X).
         *   Summary Card: Subtotal, Tax (0%), Total.
         *   CTA: "Proceed to Checkout" (links to `checkout.php`).
-3.  **[ ] Checkout Flow**
+4.  **[x] Checkout Flow**
     *   **Create `public/checkout.php`**:
         *   Two-column layout: Left (Billing Form), Right (Order Summary).
         *   **Billing Form**: Name, Email, Address, City, Zip. (Pre-fill if user logged in).
@@ -193,10 +193,12 @@ CREATE TABLE invoices (
     *   **Create `public/js/checkout.js`**:
         *   Handle Form Submit -> `POST /api/checkout.php`.
         *   On Success: Redirect to `public/success.php` or clear cart and show message.
-4.  **[ ] Shared Functionality**
+5.  **[x] Shared Functionality**
     *   **Toast Notifications**: Simple JS utility to show "Added to cart" success messages.
     *   **Formatting**: JS helper `formatCurrency(amount)` to ensure consistent $XX.XX display.
-    *   **Authentication Check**: Ensure Checkout redirects to Login if user is guest (optional, can allow guest checkout if backend supports it, but plan says User ID required).
+    *   **Authentication Check**: Ensure Checkout redirects to Login if user is guest.
+6.  **[x] Data Seeding**
+    *   Created `tests/seed_products.php` to populate DB.`
 
 ### PHASE 5: Admin Dashboard (Back-office)
 
