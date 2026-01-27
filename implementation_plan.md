@@ -165,6 +165,10 @@ CREATE TABLE invoices (
         *   Remove placeholder text.
         *   Add container `<div id="product-grid">` with loading state.
         *   Add script reference to `catalog.js`.
+    *   **Update `public/products.php`**:
+        *   Remove placeholder text.
+        *   Add container `<div id="product-grid">` with loading state.
+        *   Add script reference to `catalog.js`.
         *   **Bonus**: Add simple category filter sidebar (static HTML for now).
 2.  **[x] Product Details Integration**
     *   **Create `public/product.php`** (or `product-detail.php`):
@@ -206,19 +210,50 @@ CREATE TABLE invoices (
 
 ### PHASE 5: Admin Dashboard (Back-office)
 
-*   **Goal**: Management interface for Admins.
+*   **Goal**: Secure management interface for Admins to manage products and users.
 *   **Developer**: Full Stack
 
 #### Tasks
-1.  **[ ] Admin Layout**
-    *   Protected route (check `Auth::isAdmin()`).
-    *   Sidebar navigation (Users, Products, Orders).
-2.  **[ ] Product Management UI**
-    *   List view with Edit/Delete buttons.
-    *   Modal or Page for "Add/Edit Product" form.
-    *   Image upload handling.
-3.  **[ ] User & Order View**
-    *   Read-only lists of users and orders.
+1.  **[ ] Admin Authentication & Security**
+    *   **Backend**: 
+        *   Update `src/Utils/Auth.php`: Ensure `isAdmin()` checks `role === 'admin'`.
+        *   Update `api/login.php`: Allow admin login (standard auth).
+        *   Create `api/admin/check_auth.php`: Verify admin session for frontend routing.
+    *   **Frontend**:
+        *   Create `public/admin/login.php`: Dedicated login form (styled differently/minimal).
+        *   Create `public/admin/logout.php`: Specific redirect to admin login.
+        *   **Middleware**: Create `public/js/admin-auth.js` to check session on page load and redirect to login if not authenticated.
+
+2.  **[ ] Admin Dashboard & Layout**
+    *   **Layout**: Create `public/admin/includes/header.php` and `sidebar.php`.
+    *   **Dashboard**: Create `public/admin/index.php`.
+        *   Display quick stats (Total Orders, Total Users, Low Stock Items).
+        *   Links to Products, Users.
+
+3.  **[ ] Product Management (CRUD)**
+    *   **Backend**:
+        *   Ensure `src/Models/Product.php` has `create`, `update`, `delete`, `getAll`, `getById`.
+        *   Create `api/admin/products/list.php` (JSON).
+        *   Create `api/admin/products/save.php`: Handle POST (Create/Update based on ID presence). Handle Image Upload.
+        *   Create `api/admin/products/delete.php`: Handle DELETE.
+    *   **Frontend**:
+        *   Create `public/admin/products.php`: Table view of products (Image, Name, Price, Stock, Actions: Edit/Delete).
+        *   Create `public/admin/product_form.php`: Form for Add/Edit (Name, Description, Price, Stock, Image).
+        *   JS: `public/js/admin-products.js` to handle fetch and form submission.
+
+4.  **[ ] User Management**
+    *   **Backend**:
+        *   Update `src/Models/User.php`: Add `getAll()` and `delete($id)`.
+        *   Create `api/admin/users/list.php` (JSON).
+        *   Create `api/admin/users/delete.php`.
+    *   **Frontend**:
+        *   Create `public/admin/users.php`: Table view (Name, Email, Role, Created At, Action: Delete).
+        *   JS: `public/js/admin-users.js` to handle fetch and delete.
+
+#### Validation Steps
+*   **Test Admin Auth**: Verify access to `/admin/*` is blocked for guests/customers.
+*   **Test Product CRUD**: Add product, verify it appears in `public/products.php`. Edit product, verify changes. Delete product, verify removal.
+*   **Test User Mgmt**: List users. Delete a test user. Verify they cannot login.
 
 ## ✅ Verification Plan
 
@@ -252,7 +287,7 @@ Since we are using raw PHP, valid validation will be script-based:
 │   ├── Models/
 │   │   ├── User.php
 │   │   ├── Product.php
-│   │   └── Order.php
+│   │   ├── Order.php
 │   └── Utils/
 │       ├── Auth.php
 │       └── Validator.php
@@ -263,12 +298,21 @@ Since we are using raw PHP, valid validation will be script-based:
 │   │   ├── products/
 │   │   ├── cart.php
 │   │   └── checkout.php
+│   │   ├── admin/            # Admin APIs
+│   │   │   ├── products/
+│   │   │   ├── users/
+│   │   │   └── check_auth.php
 │   ├── css/
 │   ├── js/
 │   ├── index.php
 │   ├── catalog.php
 │   ├── login.php
-│   └── admin/
+│   └── admin/            # Admin UI
+│       ├── index.php
+│       ├── login.php
+│       ├── products.php
+│       ├── users.php
+│       └── includes/
 ├── tests/
 ├── schema.sql
 └── README.md
