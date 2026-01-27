@@ -143,35 +143,60 @@ CREATE TABLE invoices (
     *   Implement "Hero Section" from Strategic Report.
     *   Implement "Services" teaser.
     *   Implement "Featured Products" grid (initially static or skeleton loader).
-4.  **[ ] Homepage Overhaul (Rich Content)**
+4.  **[x] Homepage Overhaul (Rich Content)**
     *   **Proof of Expertise**: Add logos/tech stack section and metrics line (X actors, Y automations).
     *   **Expanded Messaging**: Integrate "From data to signal" positioning.
     *   **Trust Signals**: Add testimonials or "Why Us" comparison table (Scrapers vs Assets).
     *   **Visual Enhancements**: Better gradients, glassmorphism cards, micro-interactions using existing CSS variables.
     *   **Interactivity**: Scroll reveal animations, infinite logo marquee, hero typing effect.
 
-### PHASE 4: Frontend-Backend Integration
+### PHASE 4: Frontend-Backend Integration (Products & Cart)
 
 *   **Goal**: Connect the UI to the Data.
 *   **Developer**: Frontend (consuming Backend)
 
 #### Tasks
-1.  **[ ] Product Catalog Integration**
-    *   Create `public/js/catalog.js`.
-    *   Fetch data from `api/products/list.php`.
-    *   Render product cards dynamically on `catalog.php`.
+1.  **[ ] Product Catalog (Frontend)**
+    *   **Create `public/js/catalog.js`**:
+        *   `fetchProducts()`: Async function to call `GET /api/products/list.php`.
+        *   `renderGrid(products)`: Generate HTML for product cards (Image, Title, Price, "Add to Cart").
+        *   **Styling**: Use glassmorphism cards defined in index.css.
+    *   **Update `public/products.php`**:
+        *   Remove placeholder text.
+        *   Add container `<div id="product-grid">` with loading state.
+        *   Add script reference to `catalog.js`.
+        *   **Bonus**: Add simple category filter sidebar (static HTML for now).
 2.  **[ ] Product Details Integration**
-    *   Create `public/js/product-detail.js`.
-    *   Parse URL param `?id=X`.
-    *   Fetch details from `api/products/get.php` and render.
-3.  **[ ] Authentication Flows**
-    *   Build Login/Register Forms (`login.php`, `register.php`).
-    *   JS fetch to POST data to API.
-    *   Handle success (redirect) or error messages (UI alerts).
-4.  **[ ] Cart & Checkout UI**
-    *   Implement "Add to Cart" button (AJAX request to `api/cart.php`).
-    *   Build `cart.php` page: List items, update quantities.
-    *   Build `checkout.php`: Form for billing info -> POST to `api/checkout.php`.
+    *   **Create `public/product.php`** (or `product-detail.php`):
+        *   Layout: Image (Left), Details (Right - Title, Description, Price, "Add to Cart").
+        *   Container `<div id="product-detail">`.
+    *   **Create `public/js/product-detail.js`**:
+        *   `fetchProductDetails()`: Parse URL param `?id=X`.
+        *   Call `GET /api/products/get.php?id=X`.
+        *   Render details or show 404 if not found.
+3.  **[ ] Shopping Cart (Global & Page)**
+    *   **Create `public/js/cart.js`**:
+        *   `addToCart(id)`: POST to `/api/cart.php` (action: click). Show toast notification.
+        *   `updateCartHeader()`: Fetch current count and update Header badge.
+        *   `renderCartPage()`: For `cart.php`, fetch items and render table.
+    *   **Update `public/includes/header.php`**:
+        *   Add Cart Icon (SVG) with `<span id="cart-count">` badge.
+    *   **Create `public/cart.php`**:
+        *   Table Layout: Product, Unit Price, Quantity (Input), Total, Remove (X).
+        *   Summary Card: Subtotal, Tax (0%), Total.
+        *   CTA: "Proceed to Checkout" (links to `checkout.php`).
+3.  **[ ] Checkout Flow**
+    *   **Create `public/checkout.php`**:
+        *   Two-column layout: Left (Billing Form), Right (Order Summary).
+        *   **Billing Form**: Name, Email, Address, City, Zip. (Pre-fill if user logged in).
+        *   **Payment Mock**: "Pay with Credit Card" (Simulated).
+    *   **Create `public/js/checkout.js`**:
+        *   Handle Form Submit -> `POST /api/checkout.php`.
+        *   On Success: Redirect to `public/success.php` or clear cart and show message.
+4.  **[ ] Shared Functionality**
+    *   **Toast Notifications**: Simple JS utility to show "Added to cart" success messages.
+    *   **Formatting**: JS helper `formatCurrency(amount)` to ensure consistent $XX.XX display.
+    *   **Authentication Check**: Ensure Checkout redirects to Login if user is guest (optional, can allow guest checkout if backend supports it, but plan says User ID required).
 
 ### PHASE 5: Admin Dashboard (Back-office)
 
@@ -215,12 +240,6 @@ Since we are using raw PHP, valid validation will be script-based:
 
 ```
 /
-├── api/                  # JSON Endpoints
-│   ├── login.php
-│   ├── register.php
-│   ├── products/
-│   ├── cart.php
-│   └── checkout.php
 ├── config/
 │   └── database.php
 ├── src/                  # Core Logic (Classes)
@@ -232,6 +251,12 @@ Since we are using raw PHP, valid validation will be script-based:
 │       ├── Auth.php
 │       └── Validator.php
 ├── public/               # Frontend
+│   ├── api/                  # JSON Endpoints
+│   │   ├── login.php
+│   │   ├── register.php
+│   │   ├── products/
+│   │   ├── cart.php
+│   │   └── checkout.php
 │   ├── css/
 │   ├── js/
 │   ├── index.php
