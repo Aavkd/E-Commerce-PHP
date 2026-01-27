@@ -27,7 +27,8 @@
             <a href="/about.php">About</a>
         </nav>
         
-        <div class="header-cta">
+        <div class="header-cta" style="display: flex; gap: 1.5rem; align-items: center;">
+            <a href="/login.php" style="color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: color 0.2s;">Login</a>
             <a href="/contact.php" class="btn btn-primary">Book a Call</a>
         </div>
     </div>

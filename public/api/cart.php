@@ -1,7 +1,7 @@
 <?php
 // api/cart.php
 header('Content-Type: application/json');
-require_once '../src/Models/Cart.php';
+require_once '../../src/Models/Cart.php';
 
 $cart = new Cart();
 $input = json_decode(file_get_contents('php://input'), true);

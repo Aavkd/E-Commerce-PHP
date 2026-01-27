@@ -1,10 +1,10 @@
 <?php
 // api/checkout.php
 header('Content-Type: application/json');
-require_once '../config/database.php';
-require_once '../src/Utils/Auth.php';
-require_once '../src/Models/Cart.php';
-require_once '../src/Models/Order.php';
+require_once '../../config/database.php';
+require_once '../../src/Utils/Auth.php';
+require_once '../../src/Models/Cart.php';
+require_once '../../src/Models/Order.php';
 
 if (!Auth::isLoggedIn()) {
     http_response_code(401);

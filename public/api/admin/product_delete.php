@@ -1,9 +1,9 @@
 <?php
 // api/admin/product_delete.php
 header('Content-Type: application/json');
-require_once '../../config/database.php';
-require_once '../../src/Utils/Auth.php';
-require_once '../../src/Models/Product.php';
+require_once '../../../config/database.php';
+require_once '../../../src/Utils/Auth.php';
+require_once '../../../src/Models/Product.php';
 
 if (!Auth::isAdmin()) {
     http_response_code(403);

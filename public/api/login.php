@@ -2,10 +2,10 @@
 // api/login.php
 header('Content-Type: application/json');
 
-require_once '../config/database.php';
-require_once '../src/Utils/Validator.php';
-require_once '../src/Utils/Auth.php';
-require_once '../src/Models/User.php';
+require_once '../../config/database.php';
+require_once '../../src/Utils/Validator.php';
+require_once '../../src/Utils/Auth.php';
+require_once '../../src/Models/User.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
