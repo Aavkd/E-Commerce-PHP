@@ -2,7 +2,7 @@
 // config/database.php
 
 $host = 'localhost';
-$db_name = 'ecommerce_db';
+$db_name = 'agency_db'; // Updated to match README
 $username = 'root';
 $password = '';
 

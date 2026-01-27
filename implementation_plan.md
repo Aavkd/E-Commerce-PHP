@@ -91,7 +91,10 @@ CREATE TABLE invoices (
     *   Create `schema.sql` file.
     *   Set up local MySQL database `agency_db`.
     *   Run migration script to create tables.
-3.  **[x] DB Connection Wrapper**
+3.  **[x] Database Startup & Tuning**
+    *   **[x] Start Database Server**: Verified MySQL running on port 3306 (MariaDB).
+    *   **[x] Fix Configuration**: Updated `database.php` to use correct DB name (`agency_db`).
+4.  **[x] DB Connection Wrapper**
     *   Create `config/database.php`: Singleton pattern PDO connection.
     *   Ensure strict error mode is on.
 
@@ -101,22 +104,22 @@ CREATE TABLE invoices (
 *   **Developer**: Backend
 
 #### Tasks
-1.  **[ ] Validation & Security Helpers**
+1.  **[x] Validation & Security Helpers**
     *   Create `src/Utils/Validator.php`: Methods to sanitize inputs, validate emails.
     *   Create `src/Utils/Auth.php`: Session management, CSRF token generation.
-2.  **[ ] User Management API**
+2.  **[x] User Management API**
     *   Create `src/Models/User.php` (Methods: `create`, `findByEmail`, `verifyPassword`).
     *   Create `api/register.php`: Handle POST requests, validate, insert user.
     *   Create `api/login.php`: Validate credentials, start session/issue token.
     *   Create `api/logout.php`.
     *   **Validation**: Test with Postman/Curl.
-3.  **[ ] Product Management API**
+3.  **[x] Product Management API**
     *   Create `src/Models/Product.php` (CRUD methods).
     *   Create `api/products/list.php`: Return JSON list of products.
     *   Create `api/products/get.php`: Return single product details.
     *   Create `api/admin/product_save.php`: Handle Create/Update (Admin only).
     *   Create `api/admin/product_delete.php`: Handle Delete (Admin only).
-4.  **[ ] Cart & Order Logic**
+4.  **[x] Cart & Order Logic**
     *   Create `src/Models/Cart.php`: Manage cart in Session (add, remove, clear, total).
     *   Create `api/cart.php`: Endpoints to modify cart state.
     *   Create `src/Models/Order.php`: Create order from cart, generate invoice record.
@@ -190,7 +193,7 @@ CREATE TABLE invoices (
 
 ### Automated Tests (Backend)
 Since we are using raw PHP, valid validation will be script-based:
-*   `tests/test_db.php`: Verify connection.
+*   **[x]** `tests/test_db_connection.php`: Verify connection. (Passed)
 *   `tests/test_models.php`: Script to create a dummy user, retrieve it, delete it.
 
 ### Manual Verification (User Acceptance)
