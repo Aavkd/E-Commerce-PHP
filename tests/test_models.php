@@ -70,6 +70,34 @@ try {
         throw new Exception("Stock Decrement Failed. Expected 45, got {$product['stock']}");
     }
 
+    // --- TEST 3: Order Retrieval ---
+    echo "\nTesting Order Retrieval...\n";
+
+    // 1. Get Orders by User
+    $orders = $orderModel->getOrdersByUserId($user['id']);
+    if (count($orders) > 0) {
+        echo "✅ getOrdersByUserId Verified (Found " . count($orders) . " orders)\n";
+    } else {
+        throw new Exception("getOrdersByUserId Failed: No orders found");
+    }
+
+    // 2. Get Order Details
+    $retrievedOrderId = $orders[0]['id'];
+    $items = $orderModel->getOrderDetails($retrievedOrderId);
+    if (count($items) === 1 && $items[0]['item_id'] == $newProductId) {
+        echo "✅ getOrderDetails Verified\n";
+    } else {
+        throw new Exception("getOrderDetails Failed");
+    }
+
+    // 3. Get Invoice
+    $invoice = $orderModel->getInvoiceByOrderId($retrievedOrderId);
+    if ($invoice && $invoice['city'] === 'Test City') {
+        echo "✅ getInvoiceByOrderId Verified\n";
+    } else {
+        throw new Exception("getInvoiceByOrderId Failed");
+    }
+
     // --- CLEANUP ---
     echo "\nCleaning up...\n";
     $productModel->delete($newProductId);

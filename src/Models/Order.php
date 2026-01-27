@@ -49,5 +49,33 @@ class Order {
             throw $e;
         }
     }
+    public function getOrdersByUserId($userId) {
+        $stmt = $this->pdo->prepare("SELECT * FROM orders WHERE user_id = ? ORDER BY created_at DESC");
+        $stmt->execute([$userId]);
+        return $stmt->fetchAll();
+    }
+
+    public function getOrderDetails($orderId) {
+        $stmt = $this->pdo->prepare("
+            SELECT oi.*, i.name, i.image_url 
+            FROM order_items oi 
+            JOIN items i ON oi.item_id = i.id 
+            WHERE oi.order_id = ?
+        ");
+        $stmt->execute([$orderId]);
+        return $stmt->fetchAll();
+    }
+
+    public function getOrderById($orderId) {
+        $stmt = $this->pdo->prepare("SELECT * FROM orders WHERE id = ?");
+        $stmt->execute([$orderId]);
+        return $stmt->fetch();
+    }
+
+    public function getInvoiceByOrderId($orderId) {
+        $stmt = $this->pdo->prepare("SELECT * FROM invoices WHERE order_id = ?");
+        $stmt->execute([$orderId]);
+        return $stmt->fetch();
+    }
 }
 ?>

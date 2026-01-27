@@ -1,3 +1,8 @@
+<?php
+require_once __DIR__ . '/../../src/Utils/Auth.php';
+Auth::startSession();
+$isLoggedIn = Auth::isLoggedIn();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +30,9 @@
             <a href="/products.php">Products</a>
             <a href="/cases.php">Use Cases</a>
             <a href="/about.php">About</a>
+            <?php if ($isLoggedIn): ?>
+                <a href="/orders.php">My Orders</a>
+            <?php endif; ?>
         </nav>
         
         <div class="header-cta" style="display: flex; gap: 1.5rem; align-items: center;">
@@ -51,7 +59,11 @@
                     border: 2px solid var(--bg-body);
                 ">0</span>
             </a>
-            <a href="/login.php" style="color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: color 0.2s;">Login</a>
+            <?php if ($isLoggedIn): ?>
+                <a href="/api/logout.php" style="color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: color 0.2s;">Logout</a>
+            <?php else: ?>
+                <a href="/login.php" style="color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: color 0.2s;">Login</a>
+            <?php endif; ?>
             <a href="/contact.php" class="btn btn-primary">Book a Call</a>
         </div>
     </div>

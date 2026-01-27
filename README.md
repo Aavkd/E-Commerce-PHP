@@ -107,6 +107,7 @@ Access the site at `http://localhost:8000`.
 - [x] Service Pages (Apify Actors, Automation, AI)
 
 ### Phase 4: Integration
-- [ ] Connect Frontend to API
-- [ ] Cart & Checkout Implementation
+- [x] Connect Frontend to API
+- [x] Cart & Checkout Implementation
+- [x] User Order History & Details
 - [ ] Admin Dashboard methods

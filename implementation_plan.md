@@ -199,6 +199,10 @@ CREATE TABLE invoices (
     *   **Authentication Check**: Ensure Checkout redirects to Login if user is guest.
 6.  **[x] Data Seeding**
     *   Created `tests/seed_products.php` to populate DB.`
+7.  **[x] User Order History**
+    *   **Create `public/orders.php`**: List user's past orders.
+    *   **Create `public/order_details.php`**: Show details for specific order.
+    *   **Backend**: Added `getOrdersByUserId` and `getOrderDetails` to `Order.php`.
 
 ### PHASE 5: Admin Dashboard (Back-office)
 
