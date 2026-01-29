@@ -41,6 +41,14 @@
     </div>
     </div>
 </footer>
+</div> <!-- /page-content-wrapper -->
+
+<!-- Dynamic Reveal Footer -->
+<div class="synapse-reveal-footer">
+    <div class="synapse-content">
+        <h1 class="synapse-text">SYNAPSE</h1>
+    </div>
+</div>
 
 <script src="/js/spotlight.js"></script>
 <script src="/js/main.js"></script>

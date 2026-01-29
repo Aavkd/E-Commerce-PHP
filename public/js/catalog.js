@@ -63,33 +63,33 @@ function renderGrid(products) {
             </div>
         `;
 
+        card.style.position = 'relative'; // Ensure anchor is contained within the card
+
         // Description truncation
         const desc = product.description
             ? (product.description.length > 80 ? product.description.substring(0, 80) + '...' : product.description)
             : 'No description available.';
 
         card.innerHTML = `
-            ${imageHtml}
-            <div class="product-content">
-                <span class="product-tag">ASSET</span>
-                <h3 class="product-title">${product.name}</h3>
-                <p class="product-desc">${desc}</p>
-                <div class="product-footer">
-                    <span class="price">${price}</span>
-                    <button class="btn btn-primary btn-sm" 
-                        onclick="addToCart(${product.id}, '${product.name.replace(/'/g, "\\'")}', ${product.price})" 
-                        style="padding: 0.5rem 1rem; font-size: 0.9rem;">
-                        Add
-                    </button>
+            <a href="product.php?id=${product.id}" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                ${imageHtml}
+                <div class="product-content" style="flex-grow: 1; padding-bottom: 0.5rem;">
+                    <span class="product-tag">ASSET</span>
+                    <h3 class="product-title">${product.name}</h3>
+                    <p class="product-desc">${desc}</p>
                 </div>
+            </a>
+            <div class="product-footer" style="margin: 0 2rem; padding: 1.5rem 0 2rem 0; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                <span class="price">${price}</span>
+                <button class="btn btn-primary btn-sm" 
+                    onclick="addToCart(${product.id}, '${product.name.replace(/'/g, "\\'")}', ${product.price})" 
+                    style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                    Add
+                </button>
             </div>
-            <a href="product.php?id=${product.id}" style="position:absolute;inset:0;z-index:1;" aria-label="View details"></a>
         `;
 
-        // Z-Index fix for button
-        const btn = card.querySelector('button');
-        if (btn) btn.style.position = 'relative';
-        if (btn) btn.style.zIndex = '2';
+        // No z-index hacks needed anymore
 
         grid.appendChild(card);
     });

@@ -8,7 +8,7 @@
     <div class="container">
         <div class="hero-grid">
             <div class="hero-content">
-                <h1>We build revenue-driven <br> <span class="text-gradient typing-text">SaaS, Automations & Actors</span></h1>
+                <h1>We build revenue-driven <br> <span class="text-gradient typing-text reveal-text">SaaS, Automations & Actors</span></h1>
                 <p class="scroll-fade delay-100">From idea → production → monetization. <br>We turn data problems into profitable assets for data-hungry businesses.</p>
                 
                 <div class="hero-actions scroll-fade delay-200">
@@ -48,11 +48,11 @@
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: auto;">
                             <div>
                                 <div style="font-size: 0.75rem; color: var(--text-muted);">Growth Rate</div>
-                                <div style="color: var(--success); font-weight: 700;">+840% 📈</div>
+                                <div style="color: var(--success); font-weight: 700;">+<span class="counter" data-target="840">0</span>% 📈</div>
                             </div>
                             <div>
                                 <div style="font-size: 0.75rem; color: var(--text-muted);">Est. Revenue</div>
-                                <div style="color: white; font-weight: 700;">$12.5k/day</div>
+                                <div style="color: white; font-weight: 700;">$<span class="counter" data-target="12.5">0</span>k/day</div>
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,9 @@
         <div class="bento-grid">
             <!-- Card 1: Apify Actors (Large) -->
             <div class="bento-item span-8 scroll-fade delay-100">
-                <div class="card-icon">🕷️</div>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+                </div>
                 <h3>Apify Actors</h3>
                 <p>Production-ready scrapers and crawlers. We build robust Actors that withstand anti-scraping measures and deliver clean, structured JSON data at scale.</p>
                 <div class="card-tags">
@@ -85,12 +87,19 @@
                     <span>Intelligence</span>
                     <span>Monitoring</span>
                 </div>
+                <div class="tech-specs">
+                    <div class="tech-spec-item">Node.js / Puppeteer</div>
+                    <div class="tech-spec-item">Residential Proxies</div>
+                    <div class="tech-spec-item">Fingerprint Rotation</div>
+                </div>
             </div>
             
             <!-- Card 2: AI & Automation (Tall) -->
             <div class="bento-item span-4 row-2 scroll-fade delay-200" style="background: linear-gradient(160deg, var(--bg-card) 0%, rgba(99,102,241,0.05) 100%);">
                 <div>
-                    <div class="card-icon">⚡</div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
                     <h3>AI & Automation</h3>
                     <p>N8n workflows and AI Agents that replace human loops. We automate scraping -> enrichment -> outreach pipelines to run on autopilot.</p>
                 </div>
@@ -100,27 +109,46 @@
                     <span>Pipelines</span>
                     <span>RAG</span>
                 </div>
+                <div class="tech-specs">
+                    <div class="tech-spec-item">n8n Self-Hosted</div>
+                    <div class="tech-spec-item">OpenAI / Claude API</div>
+                    <div class="tech-spec-item">Vector Databases</div>
+                </div>
             </div>
             
             <!-- Card 3: Custom SaaS -->
             <div class="bento-item span-4 scroll-fade delay-300">
-                <div class="card-icon">🚀</div>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 9.5V4a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v5.5M4.5 9.5h15M4.5 9.5v10.5a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V9.5M10 14h4"/></svg>
+                </div>
                 <h3>Custom SaaS</h3>
                 <p>Full-stack products built for monetization. From "just an idea" to a stripe-integrated SaaS.</p>
                  <div class="card-tags">
                     <span>MVP</span>
                     <span>Scale</span>
                 </div>
+                <div class="tech-specs">
+                    <div class="tech-spec-item">Laravel / PHP</div>
+                    <div class="tech-spec-item">Stripe Connect</div>
+                    <div class="tech-spec-item">Auth System</div>
+                </div>
             </div>
 
             <!-- Card 4: Data Intelligence -->
             <div class="bento-item span-4 scroll-fade delay-400">
-                <div class="card-icon">📊</div>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>
+                </div>
                 <h3>Data → Value</h3>
                 <p>Dashboards, alerts, and insights that help you make decisions, not just read spreadsheets.</p>
                  <div class="card-tags">
                     <span>Insights</span>
                     <span>Dashboards</span>
+                </div>
+                <div class="tech-specs">
+                    <div class="tech-spec-item">Real-time Charts</div>
+                    <div class="tech-spec-item">Slack/Gmail Alerts</div>
+                    <div class="tech-spec-item">Trend Analysis</div>
                 </div>
             </div>
         </div>
@@ -199,37 +227,60 @@
     </div>
 </section>
 
-<!-- Use Cases Teaser -->
-<section class="section-padding" style="background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%);">
+<!-- Use Cases Ticker (Live Feed) -->
+<section class="section-padding">
     <div class="container">
-         <div class="section-header scroll-fade" style="margin-bottom: 3rem;">
-            <h2>Recent Impact</h2>
-            <p style="color: var(--text-muted); max-width: 500px;">Real business problems solved with automation.</p>
+         <div class="section-header scroll-fade" style="margin-bottom: 2rem; text-align: left;">
+            <h2>Live Impact Feed</h2>
+            <p style="color: var(--text-muted); max-width: 500px;">Real-time automated business outcomes.</p>
         </div>
+    </div>
 
-        <div class="grid-3">
-             <div class="card scroll-fade delay-100" style="background: transparent; border: none; padding: 0;">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">📈</div>
-                <h3 style="font-size: 1.25rem;">Market Intelligence</h3>
-                <p style="font-size: 0.95rem;"><strong>Problem:</strong> Client spent 20h/week manually checking competitor prices.</p>
-                <p style="font-size: 0.95rem;"><strong>Solution:</strong> Custom Apify Actor + Slack Alerting.</p>
-                <div class="text-gradient" style="font-weight: 700; margin-top: 0.5rem;">Result: Saved $4k/mo in labor</div>
+    <div class="impact-ticker-wrapper scroll-fade delay-100">
+        <div class="impact-ticker-track">
+            <!-- Feed Items (Duplicated for seamless loop) -->
+            
+            <div class="ticker-item">
+                <span class="ticker-type type-success">[SUCCESS]</span>
+                <span>Market Monitor: Competitor price dropped to $49. Alert sent.</span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-type type-growth">[GROWTH]</span>
+                <span>Lead Gen: 500 verified emails extracted from LinkedIn.</span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-type type-viral">[VIRAL]</span>
+                <span>Social Scout: Trend "Portable Fan" velocity +400%.</span>
+            </div>
+             <div class="ticker-item">
+                <span class="ticker-type type-alert">[ALERT]</span>
+                <span>Inventory: Low stock detected on SKU-992. Reorder triggered.</span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-type type-success">[REVENUE]</span>
+                <span>Arbitrage: Opportunity found. Margin 32%.</span>
             </div>
 
-            <div class="card scroll-fade delay-200" style="background: transparent; border: none; padding: 0;">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
-                <h3 style="font-size: 1.25rem;">Lead Generation</h3>
-                <p style="font-size: 0.95rem;"><strong>Problem:</strong> Sales team lacked verified emails for high-ticket prospects.</p>
-                <p style="font-size: 0.95rem;"><strong>Solution:</strong> LinkedIn Scraper -> Waterfall Enrichment API.</p>
-                <div class="text-gradient" style="font-weight: 700; margin-top: 0.5rem;">Result: +40% Meeting Book Rate</div>
+            <!-- DUPLICATE SET -->
+            <div class="ticker-item">
+                <span class="ticker-type type-success">[SUCCESS]</span>
+                <span>Market Monitor: Competitor price dropped to $49. Alert sent.</span>
             </div>
-
-             <div class="card scroll-fade delay-300" style="background: transparent; border: none; padding: 0;">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">🛒</div>
-                <h3 style="font-size: 1.25rem;">Social Commerce</h3>
-                <p style="font-size: 0.95rem;"><strong>Problem:</strong> Missed viral trends on TikTok Shop.</p>
-                <p style="font-size: 0.95rem;"><strong>Solution:</strong> Real-time Monitor + Trend Prediction Algorithm.</p>
-                <div class="text-gradient" style="font-weight: 700; margin-top: 0.5rem;">Result: First to market on 3 viral items</div>
+            <div class="ticker-item">
+                <span class="ticker-type type-growth">[GROWTH]</span>
+                <span>Lead Gen: 500 verified emails extracted from LinkedIn.</span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-type type-viral">[VIRAL]</span>
+                <span>Social Scout: Trend "Portable Fan" velocity +400%.</span>
+            </div>
+             <div class="ticker-item">
+                <span class="ticker-type type-alert">[ALERT]</span>
+                <span>Inventory: Low stock detected on SKU-992. Reorder triggered.</span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-type type-success">[REVENUE]</span>
+                <span>Arbitrage: Opportunity found. Margin 32%.</span>
             </div>
         </div>
     </div>
@@ -360,4 +411,6 @@
     </div>
 </section>
 
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script> 
+<script src="/js/interactions.js"></script>
 <?php include 'includes/footer.php'; ?>

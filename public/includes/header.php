@@ -69,3 +69,4 @@ $isLoggedIn = Auth::isLoggedIn();
     </div>
 </header>
 <script src="/js/cart.js" defer></script>
+<div class="page-content-wrapper">
