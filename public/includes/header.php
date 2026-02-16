@@ -21,8 +21,9 @@ $isLoggedIn = Auth::isLoggedIn();
 <header>
     <div class="container">
         <a href="/" class="logo">
-            MONEY<span class="text-gradient">MAKER</span>
+            SYNAPSE <span class="text-gradient">SYSTEMS</span>
         </a>
+
         
         <nav class="nav-links">
             <a href="/">Home</a>

@@ -2,8 +2,9 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-brand">
-                <a href="/" class="logo">MONEY<span class="text-gradient">MAKER</span></a>
+                <a href="/" class="logo">SYNAPSE <span class="text-gradient">SYSTEMS</span></a>
                 <p>Turning data problems into revenue-generating products. Automated intelligence for the modern enterprise.</p>
+
             </div>
             
             <div class="footer-links">
@@ -36,7 +37,8 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; <?php echo date('Y'); ?> Money Maker Agency. All rights reserved.</p>
+            <p>&copy; <?php echo date('Y'); ?> Synapse Systems. All rights reserved.</p>
+
         </div>
     </div>
     </div>
