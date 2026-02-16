@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SaaS Agency Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html,
+        body {
+            overflow: hidden;
+            background: #0a0a0f;
+            color: #f0f0f5;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        /* ── REVEAL ── */
+        .reveal {
+            background: #0a0a0f
+        }
+
+        .reveal .slides {
+            text-align: left
+        }
+
+        .reveal .slides>section {
+            padding: 44px 60px;
+            overflow: hidden
+        }
+
+        .reveal .progress {
+            height: 3px;
+            background: rgba(255, 255, 255, .06)
+        }
+
+        .reveal .progress span {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6)
+        }
+
+        .reveal .controls {
+            color: #3b82f6
+        }
+
+        .reveal .slide-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #52525b;
+            background: none;
+            right: 24px;
+            bottom: 16px;
+        }
+
+        /* ── TYPO ── */
+        .reveal h1,
+        .reveal h2,
+        .reveal h3,
+        .reveal h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            text-transform: none;
+            letter-spacing: -.04em;
+            line-height: 1.05;
+            color: #f0f0f5;
+            margin: 0 0 .4em 0;
+        }
+
+        .reveal h1 {
+            font-size: 3.2em
+        }
+
+        .reveal h2 {
+            font-size: 2.4em
+        }
+
+        .reveal h3 {
+            font-size: 1.5em
+        }
+
+        .reveal p {
+            font-size: 1.05em;
+            line-height: 1.6;
+            color: #b0b0be;
+            margin: 0 0 .5em 0
+        }
+
+        .reveal li {
+            font-size: 1em;
+            line-height: 1.55;
+            color: #b0b0be;
+            margin-bottom: 8px
+        }
+
+        .reveal ul {
+            padding-left: 20px;
+            margin: 0
+        }
+
+        .reveal strong {
+            color: #f0f0f5;
+            font-weight: 600
+        }
+
+        .reveal code {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: .85em;
+            background: rgba(59, 130, 246, .1);
+            color: #93c5fd;
+            padding: 2px 8px;
+            border-radius: 5px;
+            border: 1px solid rgba(59, 130, 246, .15);
+        }
+
+        /* ── GRADIENT TEXT ── */
+        .glow {
+            color: #60a5fa
+        }
+
+        .grad {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ── ACCENT LINE ── */
+        .accent-line {
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+            margin-bottom: 24px;
+        }
+
+        /* ── LABEL ── */
+        .label {
+            display: inline-block;
+            font-size: .75em;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: #60a5fa;
+            margin-bottom: 10px;
+        }
+
+        /* ── CARDS ── */
+        .card {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .07);
+            border-radius: 14px;
+            padding: 28px;
+        }
+
+        .card-sm {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .07);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .card-glow {
+            background: rgba(59, 130, 246, .04);
+            border: 1px solid rgba(59, 130, 246, .15);
+            border-radius: 14px;
+            padding: 28px;
+        }
+
+        /* ── GRID ── */
+        .row {
+            display: flex;
+            gap: 24px;
+            align-items: stretch
+        }
+
+        .col {
+            flex: 1;
+            min-width: 0
+        }
+
+        .grid3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        /* ── TEAM ── */
+        .team {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .team-av {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: .85em;
+            color: #fff;
+        }
+
+        .av1 {
+            background: linear-gradient(135deg, #2563eb, #3b82f6)
+        }
+
+        .av2 {
+            background: linear-gradient(135deg, #4f46e5, #6366f1)
+        }
+
+        .av3 {
+            background: linear-gradient(135deg, #7c3aed, #8b5cf6)
+        }
+
+        .team-name {
+            font-weight: 700;
+            font-size: .95em;
+            color: #f0f0f5
+        }
+
+        .team-role {
+            font-size: .78em;
+            color: #71717a;
+            margin-top: 2px
+        }
+
+        /* ── ARCHI NODES ── */
+        .node {
+            text-align: center;
+            padding: 20px 14px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .07);
+            flex: 1;
+        }
+
+        .node-core {
+            border-color: rgba(59, 130, 246, .3);
+            background: linear-gradient(180deg, rgba(59, 130, 246, .08), rgba(59, 130, 246, .02));
+            box-shadow: 0 0 30px rgba(59, 130, 246, .06);
+        }
+
+        .node-title {
+            font-weight: 700;
+            font-size: 1em;
+            color: #f0f0f5;
+            margin-bottom: 4px
+        }
+
+        .node-sub {
+            font-size: .8em;
+            color: #71717a;
+            margin-top: 4px
+        }
+
+        .arrow {
+            flex: 0 0 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3b82f6;
+            font-size: .8em;
+            font-weight: 600;
+        }
+
+        /* ── CHALLENGE ── */
+        .ch {
+            border-radius: 12px;
+            padding: 24px;
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .ch-blue {
+            border-top: 3px solid #3b82f6
+        }
+
+        .ch-violet {
+            border-top: 3px solid #8b5cf6
+        }
+
+        .ch-indigo {
+            border-top: 3px solid #6366f1
+        }
+
+        .ch h4 {
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+            color: #f0f0f5
+        }
+
+        .ch p {
+            font-size: .9em
+        }
+
+        /* ── ROADMAP ── */
+        .rm {
+            text-align: center;
+            padding: 22px 16px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .06);
+            flex: 1;
+        }
+
+        .rm-title {
+            font-weight: 700;
+            font-size: 1em;
+            color: #f0f0f5
+        }
+
+        .rm-desc {
+            font-size: .8em;
+            color: #71717a;
+            margin-top: 6px
+        }
+
+        /* ── BROWSER ── */
+        .browser {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .1);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, .5);
+        }
+
+        .browser-bar {
+            background: #18181b;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%
+        }
+
+        .d-r {
+            background: #ef4444
+        }
+
+        .d-y {
+            background: #eab308
+        }
+
+        .d-g {
+            background: #22c55e
+        }
+
+        .browser-url {
+            flex: 1;
+            background: rgba(255, 255, 255, .06);
+            border-radius: 5px;
+            padding: 5px 14px;
+            font-size: .72em;
+            color: #52525b;
+            margin-left: 8px;
+        }
+
+        .browser-body {
+            background: #0a0a0f;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3f3f46;
+            font-size: .85em;
+            position: relative;
+        }
+
+        .browser-body img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            inset: 0;
+        }
+
+        /* ── SUBTLE BG SHAPES ── */
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: .15;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- ═══════════ SLIDE 1 : TITRE ═══════════ -->
+            <section>
+                <div style="position: relative;">
+                    <div class="bg-shape" style="width:400px;height:400px;background:#3b82f6;top:-100px;right:-100px">
+                    </div>
+                    <div class="bg-shape" style="width:300px;height:300px;background:#8b5cf6;bottom:-80px;left:-60px">
+                    </div>
+                </div>
+                <div
+                    style="display:flex;flex-direction:column;justify-content:center;height:100%;position:relative;z-index:1">
+                    <div class="label">Soutenance de Projet</div>
+                    <h1 style="margin-bottom:6px">
+                        <span class="grad">SaaS Agency</span> Platform
+                    </h1>
+                    <p style="font-size:1.15em;color:#71717a;max-width:750px;margin-bottom:44px">
+                        Architecture e-commerce PHP native pour la vente d'actifs digitaux.
+                    </p>
+                    <div style="display:flex;gap:16px;flex-wrap:wrap">
+                        <div class="team">
+                            <div class="team-av av1">RF</div>
+                            <div>
+                                <div class="team-name">Rodolphe Fanneau de La Horie</div>
+                                <div class="team-role">Backend & Architecture</div>
+                            </div>
+                        </div>
+                        <div class="team">
+                            <div class="team-av av2">AT</div>
+                            <div>
+                                <div class="team-name">Alexy Traore</div>
+                                <div class="team-role">Stratégie & Produit</div>
+                            </div>
+                        </div>
+                        <div class="team">
+                            <div class="team-av av3">SS</div>
+                            <div>
+                                <div class="team-name">Sofia Selloum</div>
+                                <div class="team-role">Frontend & UX</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════ SLIDE 2 : CONTEXTE ═══════════ -->
+            <section>
+                <div class="label">Contexte · Alexy Traore</div>
+                <h2><span class="grad">Le Problème</span></h2>
+                <span class="accent-line"></span>
+                <div class="row">
+                    <div class="col">
+                        <div class="card-sm" style="margin-bottom:14px;border-left:3px solid #ef4444">
+                            <p style="margin:0"><strong>Constat :</strong> Les entreprises sont noyées sous la donnée
+                                mais manquent de signaux exploitables.</p>
+                        </div>
+                        <div class="card-sm" style="margin-bottom:14px;border-left:3px solid #f59e0b">
+                            <p style="margin:0"><strong>Besoin :</strong> Des produits techniques prêts à l'emploi (n8n,
+                                Apify, agents IA) au lieu du développement sur mesure.</p>
+                        </div>
+                        <div class="card-sm" style="border-left:3px solid #22c55e">
+                            <p style="margin:0"><strong>Solution :</strong> Une marketplace spécialisée « High Agency »
+                                pour acheter ces briques comme un produit standard.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card-glow" style="text-align:center">
+                            <p style="font-size:.9em;color:#60a5fa;margin-bottom:18px;font-weight:600">Flux de Valeur
+                            </p>
+                            <div
+                                style="padding:14px;background:rgba(255,255,255,.04);border-radius:8px;margin-bottom:10px">
+                                <strong>Données Brutes</strong>
+                                <span style="float:right;color:#52525b">0 €</span>
+                            </div>
+                            <div style="color:#3b82f6;font-size:1.2em;margin:6px 0">↓</div>
+                            <div
+                                style="padding:14px;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);border-radius:8px;margin-bottom:10px">
+                                <strong class="glow">Signal Exploitable</strong>
+                            </div>
+                            <div style="color:#3b82f6;font-size:1.2em;margin:6px 0">↓</div>
+                            <div
+                                style="padding:14px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px">
+                                <strong style="color:#4ade80">Valeur ($$$)</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════ SLIDE 3 : ARCHITECTURE ═══════════ -->
+            <section>
+                <div class="label">Architecture · Rodolphe Fanneau de La Horie</div>
+                <h2><span class="grad">Architecture</span> API-Driven</h2>
+                <span class="accent-line"></span>
+                <div class="card" style="margin-bottom:22px">
+                    <div style="display:flex;align-items:center">
+                        <div class="node">
+                            <div class="node-title">Frontend</div>
+                            <div class="node-sub">HTML / Vanilla JS</div>
+                        </div>
+                        <div class="arrow">⟵ JSON ⟶</div>
+                        <div class="node node-core">
+                            <div class="node-title" style="color:#60a5fa">Backend API</div>
+                            <div class="node-sub">PHP 7.4+ · MVC Custom</div>
+                        </div>
+                        <div class="arrow">⟵ PDO ⟶</div>
+                        <div class="node">
+                            <div class="node-title">Database</div>
+                            <div class="node-sub">MySQL</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid3">
+                    <div class="card-sm">
+                        <p style="margin:0"><strong>MVC Maison</strong> — Maîtrise totale du flux. Aucune dépendance
+                            externe.</p>
+                    </div>
+                    <div class="card-sm">
+                        <p style="margin:0"><strong>API-First</strong> — Backend JSON découplé. Prêt pour une App Mobile
+                            future.</p>
+                    </div>
+                    <div class="card-sm">
+                        <p style="margin:0"><strong>XAMPP</strong> — Apache + MySQL + PHP. Environnement local fiable.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════ SLIDE 4 : FONCTIONNALITÉS ═══════════ -->
+            <section>
+                <div class="label">Fonctionnalités · Sofia Selloum</div>
+                <h2><span class="grad">Expérience</span> Utilisateur</h2>
+                <span class="accent-line"></span>
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                            <li><strong>Catalogue dynamique</strong> — Produits chargés via l'API REST</li>
+                            <li><strong>Authentification AJAX</strong> — Login & Register sans rechargement</li>
+                            <li><strong>Panier</strong> — Gestion via session et localStorage</li>
+                            <li><strong>Checkout simulé</strong> — Tunnel de commande complet</li>
+                            <li><strong>Dashboard Admin</strong> — CRUD produits & utilisateurs</li>
+                            <li><strong>Design CSS natif</strong> — Dark mode, vanilla, performant</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <div class="browser">
+                            <div class="browser-bar">
+                                <div class="dot d-r"></div>
+                                <div class="dot d-y"></div>
+                                <div class="dot d-g"></div>
+                                <div class="browser-url">localhost/public/index.php</div>
+                            </div>
+                            <div class="browser-body">
+                                <img src="images/catalogue.png" onerror="this.style.display='none'">
+                                <span>catalogue.png</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════ SLIDE 5 : CODE ═══════════ -->
+            <section>
+                <div class="label">Code · Rodolphe Fanneau de La Horie</div>
+                <h2><span class="grad">Qualité</span> du Code</h2>
+                <span class="accent-line"></span>
+                <div class="row">
+                    <div class="col">
+                        <div class="browser">
+                            <div class="browser-bar">
+                                <div class="dot d-r"></div>
+                                <div class="dot d-y"></div>
+                                <div class="dot d-g"></div>
+                                <div class="browser-url">Database.php</div>
+                            </div>
+                            <div class="browser-body" style="height:280px">
+                                <img src="images/code.png" onerror="this.style.display='none'">
+                                <span>code.png</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="display:flex;flex-direction:column;gap:12px">
+                        <div class="card-sm" style="border-left:3px solid #3b82f6">
+                            <p style="margin:0"><strong>PDO Sécurisé</strong> — Requêtes préparées. Zéro injection SQL.
+                            </p>
+                        </div>
+                        <div class="card-sm" style="border-left:3px solid #6366f1">
+                            <p style="margin:0"><strong>Routeur Custom</strong> — Chaque fichier <code>/api</code> = un
+                                endpoint REST.</p>
+                        </div>
+                        <div class="card-sm" style="border-left:3px solid #8b5cf6">
+                            <p style="margin:0"><strong>Password Hashing</strong> — <code>password_hash()</code> +
+                                <code>password_verify()</code></p>
+                        </div>
+                        <div class="card-sm" style="border-left:3px solid #a78bfa">
+                            <p style="margin:0"><strong>POO</strong> — Modèles <code>User</code>, <code>Product</code>
+                                pour la logique métier.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════ SLIDE 6 : DÉFIS ═══════════ -->
+            <section>
+                <div class="label">Défis · Sofia Selloum</div>
+                <h2><span class="grad">Défis</span> Techniques</h2>
+                <span class="accent-line"></span>
+                <div class="grid3" style="margin-top:20px">
+                    <div class="ch ch-blue">
+                        <h4>State Management</h4>
+                        <p><strong>Problème :</strong> Synchroniser le panier JS avec le serveur PHP.</p>
+                        <p style="margin-top:10px"><strong style="color:#4ade80">Solution :</strong>
+                            <code>fetch()</code> pour synchronisation AJAX à chaque interaction.</p>
+                    </div>
+                    <div class="ch ch-violet">
+                        <h4>Auth API</h4>
+                        <p><strong>Problème :</strong> Gérer l'authentification sans redirection brutale.</p>
+                        <p style="margin-top:10px"><strong style="color:#4ade80">Solution :</strong> Sessions PHP + code
+                            <code>401</code> traité élégamment en JS.</p>
+                    </div>
+                    <div class="ch ch-indigo">
+                        <h4>Notifications UX</h4>
+                        <p><strong>Problème :</strong> Informer l'utilisateur sans <code>alert()</code>.</p>
+                        <p style="margin-top:10px"><strong style="color:#4ade80">Solution :</strong> Système Toast JS
+                            pur dans <code>auth.js</code>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════ SLIDE 7 : CONCLUSION ═══════════ -->
+            <section>
+                <div style="position: relative;">
+                    <div class="bg-shape"
+                        style="width:500px;height:500px;background:#3b82f6;top:-150px;left:50%;transform:translateX(-50%)">
+                    </div>
+                </div>
+                <div style="position:relative;z-index:1">
+                    <div class="label">Conclusion · Alexy Traore</div>
+                    <h2><span class="grad">Bilan</span> & Perspectives</h2>
+                    <span class="accent-line"></span>
+                    <div class="row" style="margin-bottom:28px">
+                        <div class="col">
+                            <div class="card-sm">
+                                <p style="margin:0 0 8px 0;font-weight:700;color:#f0f0f5">Ce qu'on livre</p>
+                                <ul>
+                                    <li>Plateforme fonctionnelle sur XAMPP</li>
+                                    <li>Architecture MVC maison complète</li>
+                                    <li>Auth sécurisée + Dashboard Admin</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-sm">
+                                <p style="margin:0 0 8px 0;font-weight:700;color:#f0f0f5">Ce qu'on a appris</p>
+                                <ul>
+                                    <li>Fonctionnement d'un framework "sous le capot"</li>
+                                    <li>Routing HTTP, sessions, sécurité web</li>
+                                    <li>Communication Front ↔ Back en JSON</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="font-size:.9em;color:#60a5fa;font-weight:600;margin-bottom:14px">Roadmap V2</p>
+                    <div style="display:flex;gap:14px">
+                        <div class="rm">
+                            <div class="rm-title">💳 Stripe</div>
+                            <div class="rm-desc">Paiement réel</div>
+                        </div>
+                        <div class="rm">
+                            <div class="rm-title">🐳 Docker</div>
+                            <div class="rm-desc">Déploiement</div>
+                        </div>
+                        <div class="rm">
+                            <div class="rm-title">🤖 IA</div>
+                            <div class="rm-desc">Agents embarqués</div>
+                        </div>
+                        <div class="rm">
+                            <div class="rm-title">📝 Blog</div>
+                            <div class="rm-desc">SEO & contenu</div>
+                        </div>
+                    </div>
+                    <div style="text-align:center;margin-top:40px">
+                        <h2 style="margin-bottom:6px"><span class="grad">Merci.</span></h2>
+                        <p style="color:#71717a;font-size:.9em">Rodolphe Fanneau de La Horie · Alexy Traore · Sofia
+                            Selloum</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            controlsTutorial: false,
+            progress: true,
+            center: true,
+            slideNumber: 'c/t',
+            transition: 'slide',
+            transitionSpeed: 'default',
+            width: 1100,
+            height: 700,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 1.5,
+        });
+    </script>
+</body>
+
+</html>
