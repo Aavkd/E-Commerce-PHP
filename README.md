@@ -79,14 +79,7 @@ $db_name = 'agency_db';
 $username = 'root';
 $password = 'root'; // Default is 'root'
 ```
-
-### 3. Verification
-Run the included setup check script to ensure everything is configured correctly:
-```bash
-php setup_check.php
-```
-
-### 4. Running the Project
+### 3. Running the Project
 Serve the project from the `public` directory.
 
 **Using PHP Built-in Server (Easiest):**
@@ -132,14 +125,6 @@ Access the site at `http://localhost:8000`.
     private $user = 'root'; // Your MySQL User
     private $pass = '';     // Your MySQL Password
     ```
-
-### 3. Running the Project
-Serve the project from the `public` directory.
-
-**Using PHP Built-in Server:**
-```bash
-php -S localhost:8000 -t public
-```
 
 Access the site at `http://localhost:8000`.
 
